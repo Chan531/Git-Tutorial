@@ -1,0 +1,63 @@
+대소문자 관련 함수
+tolower : 대문자 -> 소문자 변경
+toupper : 소문자 -> 대문자 변경
+-> 다른 건 그대로 반환
+
+map : key값과 value값을 연결!
+-> 매우 유용하게 쓸 수 있을 듯
+-> vector처럼 많이 쓰인다니까 자주 써보삼
+
+문자열 공백 기준으로 자르기
+#include <sstream>
+string str="java c c++ python";
+    istringstream ss(str);
+    string stringBuffer;
+    vector<string> x;
+        while (getline(ss, stringBuffer, ' ')){
+        x.push_back(stringBuffer);
+        cout<<stringBuffer<<" ";
+    }
+
+Pair 클래스
+두 객체를 하나의 객체로 만들어줌!
+
+Tuple
+3개 이상의 객체를 하나의 객체로 만들어줌!
+tuple<int, int, string, string> info;
+info = make_tuple(1, 2, "hi", "hello");
+get<0>(info) -> 1
+get<3>(info) -> "hello"
+
+최댓값 최솟값 알 수 있는 함수
+#include <algorithm>
+*max_element(a.begin(), a.end());
+*min_element(a.begin(), a.end());
+
+소수점 자릿수 고정
+cout << fixed;
+cout.precision(원하는 자릿수)
+
+중복 원소 정렬 후 제거
+sort(v.begin(), v.end());
+v.erase(unique(v.begin(), v.end()), v.end());
+unique를 적용해주 시작점이 중복된 원소가 몰아져있는 끝 값으로 적용됨
+
+탐색에서 제일 중요한 거
+방문 여부 확인 + index 조절
+
+제곱, 제곱근 함수
+pow(10, 2) -> 100
+sqrt(9) -> 3
+
+올림, 내림 함수
+ceil(4.2) -> 5
+floor(4.2) -> 4
+반올림 방법
+floor(4.2 + 0.5) -> 4
+floor(4.7 + 0.5) -> 5
+
+벡터의 총합
+#include <numeric>
+accumulate(v.begin(), v.end(), 0)
+0 -> 합의 초기
+(만약 합이 int를 초기화하면 0을 0LL 같은 long long 형으로 적어줘야 함)
