@@ -61,3 +61,10 @@ floor(4.7 + 0.5) -> 5
 accumulate(v.begin(), v.end(), 0)
 0 -> 합의 초기
 (만약 합이 int를 초기화하면 0을 0LL 같은 long long 형으로 적어줘야 함)
+
+DP - 동적계획법 - 다이나믹프로그래밍
+1 - Top - Down 방식, 기존 방법 : fibo(n) = fibo(n-1) + fibo(n-2);
+2- Bottom - UP 방식, 아래부터 계산 : 
+for (int i = 2; i <= n; i++)
+    fibo(i) = fibo(i - 1) + fibo(i - 2);
+ 
