@@ -4,6 +4,9 @@ cin.tie(NULL);
 cout.tie(NULL);
 한 번 넣어줘보자.
 
+*프로그램 강제 종료
+exit(0)
+
 *대소문자 관련 함수
 tolower : 대문자 -> 소문자 변경
 toupper : 소문자 -> 대문자 변경
@@ -77,6 +80,7 @@ floor(4.2) -> 4
 *반올림 방법
 floor(4.2 + 0.5) -> 4
 floor(4.7 + 0.5) -> 5
+-> round(3.2) ==> 3 / round라는 함수가 존재!
 
 *벡터의 총합
 #include <numeric>
@@ -126,3 +130,21 @@ upper_bound(v.begin(), v.end(), num)
 lower_bound(v.begin(), v.end(), num)
 -> num과 같거나 큰 숫자의 위치를 반환
 index를 알고 싶으면 - v.begin()
+
+*조합
+next_permutation(v.begin(), v.end())
+-> 1 2 3라면 1 2 3 1 3 2 2 1 3 2 3 1 3 1 2 3 2 1하고 각각 true 반환, 만약 다음이 없다면 false를 반환
+
+*유클리드 알고리즘(재귀)
+int gcd(int a, int b) {
+
+    if (b == 0) 
+        return a;
+
+    else 
+        return gcd(b, a % b);
+}
+-> 재귀 방식은 수가 커지면 메모리초과 발생 가능
+
+*공백 포함 문자열 입력 받기
+getline(cin, s);
